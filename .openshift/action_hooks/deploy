@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ ! -d $OPENSHIFT_DATA_DIR/files ]; then
+    mkdir $OPENSHIFT_DATA_DIR/files
+fi
+
+ln -sf ${OPENSHIFT_DATA_DIR}files ${OPENSHIFT_REPO_DIR}sites/default/
