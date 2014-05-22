@@ -3,4 +3,4 @@
 DRUPAL_SITE_DIR=${OPENSHIFT_REPO_DIR}sites
 DRUPAL_SETTINGS=${DRUPAL_SITE_DIR}/default/settings.php
 
-chmod u=r ${DRUPAL_SETTINGS} ${DRUPAL_SITE_DIR}/default
+chmod u=r ${DRUPAL_SETTINGS} 
