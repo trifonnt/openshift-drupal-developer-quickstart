@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DRUPAL_SITE_DIR=${OPENSHIFT_REPO_DIR}sites
+DRUPAL_SETTINGS=${DRUPAL_SITE_DIR}/default/settings.php
+
+chmod u+w ${DRUPAL_SETTINGS} ${DRUPAL_SITE_DIR}/default
