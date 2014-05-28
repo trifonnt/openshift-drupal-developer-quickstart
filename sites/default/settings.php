@@ -232,11 +232,11 @@ if (getenv('OPENSHIFT_APP_NAME') != "") {
     array (
       'default' =>
       array (
-        'database' => 'gitdrupal',
+        'database' => 'drupal',
         'username' => 'root',
-        'password' => 'password',
+        'password' => 'root',
         'host' => 'localhost',
-        'port' => '',
+        'port' => '3306',
         'driver' => 'mysql',
         'prefix' => '',
         ),
