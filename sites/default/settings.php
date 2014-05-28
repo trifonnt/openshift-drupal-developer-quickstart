@@ -210,21 +210,41 @@
  *   );
  * @endcode
  */
-$databases = array (
-  'default' => 
-  array (
+if (getenv('OPENSHIFT_APP_NAME') != "") {
+  $databases = array (
     'default' => 
     array (
-      'database' => getenv('OPENSHIFT_APP_NAME'),
-      'username' => getenv('OPENSHIFT_MYSQL_DB_USERNAME'),
-      'password' => getenv('OPENSHIFT_MYSQL_DB_PASSWORD'),
-      'host' => getenv('OPENSHIFT_MYSQL_DB_HOST'),
-      'port' => getenv('OPENSHIFT_MYSQL_DB_PORT'),
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
-);
+      'default' => 
+      array (
+        'database' => getenv('OPENSHIFT_APP_NAME'),
+        'username' => getenv('OPENSHIFT_MYSQL_DB_USERNAME'),
+        'password' => getenv('OPENSHIFT_MYSQL_DB_PASSWORD'),
+        'host' => getenv('OPENSHIFT_MYSQL_DB_HOST'),
+        'port' => getenv('OPENSHIFT_MYSQL_DB_PORT'),
+        'driver' => 'mysql',
+        'prefix' => '',
+        ),
+      ),
+    );
+} else {
+  $databases = array (
+    'default' =>
+    array (
+      'default' =>
+      array (
+        'database' => 'gitdrupal',
+        'username' => 'root',
+        'password' => 'password',
+        'host' => 'localhost',
+        'port' => '',
+        'driver' => 'mysql',
+        'prefix' => '',
+        ),
+      ),
+    );
+}
+
+
 
 /**
  * Access control for update.php script.
