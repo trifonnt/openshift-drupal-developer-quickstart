@@ -4,4 +4,6 @@ if [ ! -d $OPENSHIFT_DATA_DIR/files ]; then
     mkdir $OPENSHIFT_DATA_DIR/files
 fi
 
+rm -rf $OPENSHIFT_REPO_DIR/sites/default/files
+
 ln -sf ${OPENSHIFT_DATA_DIR}files ${OPENSHIFT_REPO_DIR}sites/default/
