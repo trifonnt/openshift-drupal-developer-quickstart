@@ -1,6 +1,9 @@
 #!/bin/bash
 
 DRUPAL_SITE_DIR=${OPENSHIFT_REPO_DIR}sites
-DRUPAL_SETTINGS=${DRUPAL_SITE_DIR}/default/settings.php
 
-chmod u=r ${DRUPAL_SETTINGS} 
+for site in ${DRUPAL_SITE_DIR}/*; do
+  if [ -d ${site} ]; then
+    chmod u=r ${site} ${site}/settings.php
+  fi
+done
